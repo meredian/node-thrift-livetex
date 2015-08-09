@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/.bin/mocha ./test/ --recursive -R nyan --check-leaks",
     "thrift": "thrift -o lib --gen js:node thrift/EntityTagger.thrift",
     "server": "node lib/server.js",
     "client": "node lib/client.js",
@@ -16,5 +16,9 @@
     "async": "^1.4.0",
     "node-int64": "^0.4.0",
     "thrift": "^0.9.2"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
   }
 }
