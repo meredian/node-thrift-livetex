@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "thrift": "thrift -o lib --gen js:node thrift/EntityTagger.thrift",
     "server": "node lib/server.js",
-    "client": "node lib/client.js"
-
+    "client": "node lib/client.js",
+    "start": "npm run server"
   },
   "author": "Anton Sidelnikov <ndmeredian@gmail.com>",
   "license": "MIT",
