@@ -16,6 +16,9 @@ service EntityTagger {
     EntityId createEntity(1:Entity entity)
     TagId createTag(1:Tag tag)
 
+    Entity getEntity(1:EntityId entityId)
+    Entity getTag(1:TagId tagId)
+
     void addEntityTag(1:EntityId entityId, 2:TagId tagId)
     void removeEntityTag(1:EntityId entityId, 2:TagId tagId)
 
