@@ -1,13 +1,20 @@
-var path = require('path');
+import path from 'path';
+import chai from 'chai';
+import mochawait from 'mochawait'
 
-var chai = require('chai');
-var expect = exports.expect = chai.expect;
+let expect = chai.expect;
+
 chai.should();
 
-var libRequire = exports.libRequire = function(libPath) {
-    return require(path.normalize(path.join(__dirname, "../../lib", libPath)));
+function libPath(filename) {
+    return path.normalize(path.join(__dirname, "../../lib", filename))
 }
 
-var Server = exports.server = libRequire('server');
-var Client = exports.client = libRequire('client');
+function libRequire(filename) {
+    return require(libPath(filename));
+}
 
+let server = libRequire('server');
+let client = libRequire('client');
+
+export {expect, server, client}

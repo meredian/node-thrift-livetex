@@ -4,21 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha ./test/ --recursive -R nyan --check-leaks",
-    "thrift": "thrift -o lib --gen js:node thrift/EntityTagger.thrift",
-    "server": "node lib/server.js",
-    "client": "node lib/client.js",
+    "test": "node_modules/.bin/mocha --harmony --compilers js:babel/register ./test/ --recursive -R nyan",
+    "thrift": "npm run thrift:compile && npm run thrift:cleanup",
+    "thrift:compile": "thrift -o lib -I thrift -r -v --gen js:node thrift/EntityTagger.thrift",
+    "thrift:cleanup": "node lib/cleanThrift",
+    "server": "node --harmony lib/server.js",
+    "client": "node --harmony lib/client.js",
     "start": "npm run server"
   },
   "author": "Anton Sidelnikov <ndmeredian@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.4.0",
+    "babel": "^5.8.21",
+    "bluebird": "^2.9.34",
     "node-int64": "^0.4.0",
     "thrift": "^0.9.2"
   },
   "devDependencies": {
     "chai": "^3.2.0",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "mochawait": "^2.0.1"
   }
 }
