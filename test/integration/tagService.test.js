@@ -1,5 +1,5 @@
 import {client, expect} from './helper';
-import {IncorrectTag} from '../../lib/gen-nodejs/tagService_types'
+import {IncorrectTag} from '../../lib/thriftTypes'
 
 describe('TagService', function() {
     describe('#createTag', function() {

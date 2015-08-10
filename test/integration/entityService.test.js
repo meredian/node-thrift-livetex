@@ -1,6 +1,5 @@
 import {client} from './helper';
-import {IncorrectEntity} from '../../lib/gen-nodejs/entityService_types'
-import {IncorrectTag} from '../../lib/gen-nodejs/tagService_types'
+import {IncorrectTag, IncorrectEntity} from '../../lib/thriftTypes'
 
 describe('EntityService', function() {
     describe('#createEntity', function() {
