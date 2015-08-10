@@ -1,5 +1,5 @@
-import {client} from './helper';
-import {IncorrectTag} from '../../lib/gen-nodejs/TagService_types'
+import {client, expect} from './helper';
+import {IncorrectTag} from '../../lib/gen-nodejs/tagService_types'
 
 describe('TagService', function() {
     describe('#createTag', function() {
@@ -11,8 +11,8 @@ describe('TagService', function() {
     });
 
     describe('#getTag', function() {
-        it('throws InvalidTag exception on incorrect tag id', async function() {
-            client.getTag(-1).should.be.rejectedWith(IncorrectTag);
+        it('throws InvalidTag on incorrect tag id', async function() {
+            return client.getTag(-1).should.be.rejectedWith(IncorrectTag);
         });
     });
 });

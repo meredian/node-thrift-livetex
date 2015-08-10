@@ -8,7 +8,11 @@ struct Entity {
     3:optional list<tagService.TagId> tags
 }
 
+exception IncorrectEntity {
+    1: EntityId id
+}
+
 service EntityService {
-    EntityId createEntity(1:Entity entity)
-    Entity getEntity(1:EntityId entityId)
+    EntityId createEntity(1:Entity entity) throws (1:tagService.IncorrectTag incorrectTag)
+    Entity getEntity(1:EntityId entityId) throws (1:IncorrectEntity incorrectEntity)
 }
