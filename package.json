@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
     "mocha": "^2.2.5",
     "mochawait": "^2.0.1"
   }
