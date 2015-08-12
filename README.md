@@ -1,4 +1,4 @@
-node-thrift-livetext
+node-thrift-livetex
 ====================
 
 Live demo for Node.js ES6-based multiplexed thrift server & client

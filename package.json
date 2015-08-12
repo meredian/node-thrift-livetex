@@ -1,11 +1,11 @@
 {
-  "name": "node-thrift-livetext",
+  "name": "node-thrift-livetex",
   "version": "0.1.0",
   "description": "Live demo for Node.js ES6-based multiplexed thrift server & client",
   "main": "lib/server.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/meredian/node-thrift-livetext.git"
+    "url": "git://github.com/meredian/node-thrift-livetex.git"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --harmony --compilers js:babel/register ./test/ --recursive -R spec",
